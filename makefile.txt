@@ -1,0 +1,4 @@
+readme.md: guessinggames.sh
+        echo "Bash,Make,Git and Github Assignment" > readme.md
+        date >> readme.md
+        wc -l guessinggames.sh >> readme.md
