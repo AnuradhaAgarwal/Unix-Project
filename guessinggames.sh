@@ -1,6 +1,6 @@
 function checkGuess {
         count=$(find -maxdepth 1 -type f -printf .| wc -c)
-        if [ $1 -eq $count ]
+        if [ $1 -eq $count ] 
         then
                 state="guessed"
         fi
@@ -11,10 +11,15 @@ while [ $state != "guessed" ]
 do
         read -p 'Input' userInput
         checkGuess $userInput
-        if [ $state = "guessed" ]
+        if [ $state = "guessed" ] 
         then
                 echo 'Congratulation'
         else
-                echo 'Please try again!!.'
+                if [ $userInput -gt $count ] 
+                then
+                        echo 'Try lesser number please' 
+                else
+                        echo 'Try higher number please'
+                fi
         fi
 done
